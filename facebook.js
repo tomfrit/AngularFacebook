@@ -85,7 +85,10 @@ var module = angular.module ('bnx.module.facebook', [])
                 });
             });
         };
- 
+        var parse = function() {
+            console.log("hello");
+            FB.XFBML.parse();
+        }
         var login = function (params) {
             return promise (function (callback) {
                 FB.login (function (response) {
@@ -116,7 +119,8 @@ var module = angular.module ('bnx.module.facebook', [])
 
             init: provider.init,
             api: api,
-            login: login
+            login: login,
+            parse:parse
         }
     }];
 });
